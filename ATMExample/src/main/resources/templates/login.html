@@ -1,0 +1,14 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<body>
+<h2>ATM Login</h2>
+
+<form action="/login" method="post">
+    Username: <input type="text" name="username"><br>
+    PIN: <input type="password" name="pin"><br>
+    <button type="submit">Login</button>
+</form>
+
+<p th:text="${error}"></p>
+</body>
+</html>

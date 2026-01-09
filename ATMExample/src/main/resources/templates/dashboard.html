@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<body>
+
+<h2>ATM Dashboard</h2>
+
+<p>Current Balance: <span th:text="${balance}"></span></p>
+
+<h3>Deposit</h3>
+<form action="/deposit" method="post">
+    Amount: <input type="number" name="amount" required><br>
+    PIN: <input type="password" name="pin" required><br>
+    <button type="submit">Deposit</button>
+</form>
+
+<h3>Withdraw</h3>
+<form action="/withdraw" method="post">
+    Amount: <input type="number" name="amount" required><br>
+    PIN: <input type="password" name="pin" required><br>
+    <button type="submit">Withdraw</button>
+</form>
+
+<h3>Other Options</h3>
+<a href="/generatePin">Generate PIN</a><br>
+<a href="/miniStatement">Mini Statement</a><br>
+<a href="/logout">Exit</a>
+
+<p th:text="${message}" style="color:green;"></p>
+
+</body>
+</html>
