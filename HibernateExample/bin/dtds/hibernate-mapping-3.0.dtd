@@ -1,0 +1,39 @@
+<!-- Hibernate Mapping DTD 3.0 -->
+
+<!ELEMENT hibernate-mapping (class*)>
+
+<!ELEMENT class (id, (property|many-to-one|one-to-many|component|set|list|bag|map|any)*)>
+<!ATTLIST class name CDATA #REQUIRED table CDATA #IMPLIED schema CDATA #IMPLIED catalog CDATA #IMPLIED proxy CDATA #IMPLIED lazy (true|false) "true" polymorphism (implicit|explicit) "implicit">
+
+<!ELEMENT id (generator, column*)>
+<!ATTLIST id name CDATA #REQUIRED column CDATA #IMPLIED type CDATA #IMPLIED unsaved-value CDATA #IMPLIED>
+
+<!ELEMENT generator (#PCDATA)>
+<!ATTLIST generator class CDATA #REQUIRED>
+
+<!ELEMENT property EMPTY>
+<!ATTLIST property name CDATA #REQUIRED column CDATA #IMPLIED type CDATA #IMPLIED not-null (true|false) "false" unique (true|false) "false" length CDATA #IMPLIED>
+
+<!ELEMENT many-to-one EMPTY>
+<!ATTLIST many-to-one name CDATA #REQUIRED class CDATA #REQUIRED column CDATA #IMPLIED not-null (true|false) "false" unique (true|false) "false" cascade CDATA #IMPLIED>
+
+<!ELEMENT one-to-many EMPTY>
+<!ATTLIST one-to-many class CDATA #REQUIRED>
+
+<!ELEMENT component (property*)>
+<!ATTLIST component name CDATA #REQUIRED class CDATA #REQUIRED>
+
+<!ELEMENT set (key, one-to-many)>
+<!ATTLIST set name CDATA #REQUIRED table CDATA #IMPLIED cascade CDATA #IMPLIED lazy (true|false) "true">
+
+<!ELEMENT list (key, one-to-many)>
+<!ATTLIST list name CDATA #REQUIRED table CDATA #IMPLIED cascade CDATA #IMPLIED lazy (true|false) "true">
+
+<!ELEMENT bag (key, one-to-many)>
+<!ATTLIST bag name CDATA #REQUIRED table CDATA #IMPLIED cascade CDATA #IMPLIED lazy (true|false) "true">
+
+<!ELEMENT map (key, map-key, one-to-many)>
+<!ATTLIST map name CDATA #REQUIRED table CDATA #IMPLIED cascade CDATA #IMPLIED lazy (true|false) "true">
+
+<!ELEMENT any EMPTY>
+<!ATTLIST any name CDATA #REQUIRED id-type CDATA #REQUIRED meta-type CDATA #REQUIRED column CDATA #REQUIRED>

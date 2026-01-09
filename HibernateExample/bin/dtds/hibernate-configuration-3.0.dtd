@@ -1,0 +1,20 @@
+<!-- Hibernate Configuration DTD 3.0 -->
+
+<!ELEMENT hibernate-configuration (session-factory+)>
+
+<!ELEMENT session-factory (property*, mapping*, class-cache*, collection-cache*, event*)>
+
+<!ELEMENT property (#PCDATA)>
+<!ATTLIST property name CDATA #REQUIRED>
+
+<!ELEMENT mapping EMPTY>
+<!ATTLIST mapping resource CDATA #REQUIRED>
+
+<!ELEMENT class-cache EMPTY>
+<!ATTLIST class-cache class CDATA #REQUIRED usage CDATA #IMPLIED region CDATA #IMPLIED>
+
+<!ELEMENT collection-cache EMPTY>
+<!ATTLIST collection-cache collection CDATA #REQUIRED usage CDATA #IMPLIED region CDATA #IMPLIED>
+
+<!ELEMENT event EMPTY>
+<!ATTLIST event type CDATA #REQUIRED listener CDATA #REQUIRED>
